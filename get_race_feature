@@ -1,0 +1,15 @@
+import os
+import csv
+
+path = "/Users/meiligupta/Desktop/UTKFace"
+dir_list = os.listdir(path)
+
+filename = "race_feature.csv"
+
+with open(filename, 'w') as csvfile:
+    csvwriter = csv.writer(csvfile)
+    for image_name in dir_list:
+        split_image_name = image_name.split('_')
+        csvwriter.writerow(split_image_name[2])
+
+
